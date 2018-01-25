@@ -155,6 +155,8 @@ function! s:find_files()
     let str = input("find files with the name part: ")
     if str != ''
         call s:quickfix_list("f", str, str)
+    else
+        call s:quickfix_list("f", "/", "")
     endif
 endfunction
 
