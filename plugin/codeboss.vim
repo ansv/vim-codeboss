@@ -1,14 +1,18 @@
 " vim-codeboss - cscope helper for vim
 "
-" Copyright: Copyright (C) 2018 Andrey Shvetsov
-" License: The MIT License
-
+" Copyright (C) 2018 Andrey Shvetsov
+"
+" SPDX-License-Identifier: MIT
+"
 " Install:
 "
 " If you use junegunn/vim-plug:
 " Add to your .vimrc
 " Plug 'ansv/vim-codeboss'
-
+"
+" Take a look at the plugin https://github.com/ansv/vim-supernext
+" This helps to walk between the quickfix entries.
+"
 " Hint:
 "
 " Since this script uses the key mapping <C-g> that must print the current
