@@ -62,7 +62,7 @@ is_tracked() {
 rebuild() {
     [ -e .cboss.files ] &&
         cscope -v -R -b -q -k -i .cboss.files -f .cboss.out ||
-        rm .cboss.out*
+        rm -f .cboss.out*
 }
 
 "$@"
