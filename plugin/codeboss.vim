@@ -75,17 +75,17 @@ nnoremap <silent> <C-g>a     :call <SID>add_object(expand("%"))<CR>
 
 
 function! s:reload()
-    cscope kill -1
+    silent cscope kill -1
     call s:scall("rebuild", "")
 
     " add dynamic cscope database from the current directory
     if filereadable(".cboss.out")
-        cs add .cboss.out
+        silent cs add .cboss.out
     endif
 
     " add default (static) cscope database from the current directory
     if filereadable("cscope.out")
-        cs add cscope.out
+        silent cs add cscope.out
     endif
 
     "redraw!
