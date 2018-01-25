@@ -43,7 +43,7 @@ _add_if_new() {
 #
 add() {
     [ -n "$(_list_files "$(readlink -f "$1")" |
-        egrep "\.[CcHh](|pp|PP|\+\+)$" |
+        egrep -i "\.[ch](|pp|\+\+)$|\.cc$" |
             while read n; do _add_if_new "$n"; done |
                 uniq)" ]
 }
