@@ -124,12 +124,20 @@ nnoremap <silent> g<C-d>     :call <SID>goto_def()<CR>
 
 
 function! s:quickfix_list(cmd, id, sid)
+    let home = expand("%") . ":" . line(".")  . ":" . col(".") . ": home"
     call setqflist([])
     if s:cscope_find(a:cmd . " " . a:id)
+        :caddexpr home
+        let qf = getqflist()
+        let item = remove(qf, -1)
+        call insert(qf, item, 0)
+        call setqflist(qf, 'r')
+
         execute "copen"
         call clearmatches()
         call matchadd("Search", a:sid)
         execute "wincmd p"
+        execute "cfirst"
     endif
 endfunction
 
