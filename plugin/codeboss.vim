@@ -124,7 +124,6 @@ nnoremap <silent> g<C-d>     :call <SID>goto_def()<CR>
 
 
 function! s:quickfix_list(cmd, id, sid)
-    execute "normal mG"
     call setqflist([])
     if s:cscope_find(a:cmd . " " . a:id)
         execute "copen"
@@ -132,7 +131,6 @@ function! s:quickfix_list(cmd, id, sid)
         call matchadd("Search", a:sid)
         execute "wincmd p"
     endif
-    execute "normal `G"
 endfunction
 
 function! s:find_token_refs()
