@@ -152,8 +152,10 @@ nnoremap <silent> <C-g>g     :call <SID>find_token_refs()<CR>
 
 
 function! s:find_text()
-    let str = expand("<cword>")
-    call s:quickfix_list("t", str, str)
+    let str = input("find text: ")
+    if str != ''
+        call s:quickfix_list("t", str, str)
+    endif
 endfunction
 
 " find all instances of the [T]ext
